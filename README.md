@@ -49,3 +49,11 @@ yarn run serve ou yarn serve
 
 - Para abrir API acesse o link:
 [http://localhost:5000/](http://localhost:5000/)
+
+### Usuário para primeiro login:
+* Email:
+admin@admin.com
+* Senha:
+123
+
+Para ver os demais acessos basta abrir a página de usuários.
