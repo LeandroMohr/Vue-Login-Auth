@@ -7,7 +7,7 @@ export default [
       showNavbar: true,
       title: 'Users',
       icon: 'account_box',
-      label: 'Todos os usuários'
+      label: 'Tabela de usuários'
     }
   }
 ]

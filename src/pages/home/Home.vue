@@ -1,25 +1,36 @@
 <template>
-  <div id="home">
-    <div class="user-info">
-      <img class="profile-picture" :src="this.user.picture" alt="Profile Picture">
-      <h2>Olá, {{ user.name }}</h2>
-      <p>Bem vindo ao Vue-Login-Auth</p>
+  <div class="home mt-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="user-info">
+            <h2 class="mb-4">Seja Bem vindo, {{ user.name }}</h2>
+            <img class="profile-picture mb-4" :src="this.user.picture" alt="Profile Picture">
+            <div class="description col-sm-12 col-md-6 col-offset-3">
+              <h3>{{ user.jobTitle }}</h3>
+              <h5>{{ user.comment }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="home-links">
+            <router-link
+              :key="i"
+              class="home-link"
+              :to="{ name: route.name }"
+              v-for="(route, i) in routes"
+            >
+              <i class="material-icons md-48 mb-2">
+                {{ route.meta.icon }}
+              </i>
+              <p class="text-center">{{ route.meta.label }}</p>
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="home-links">
-      <router-link
-        :key="i"
-        class="home-link"
-        :to="{ name: route.name }"
-        v-for="(route, i) in routes"
-      >
-        <i class="material-icons md-48">
-          {{ route.meta.icon }}
-        </i>
-        <span>{{ route.meta.label }}</span>
-      </router-link>
-    </div>
-
     <button class="btn btn-exit" v-on:click="logout">
       <span class="d-block">sair <i class="material-icons md-18">exit_to_app</i></span>
     </button>
@@ -60,38 +71,47 @@ export default {
   }
 }
 
-#home {
+.home {
   width: 100%;
-  height: 100vh;
+  height: auto;
   @include flex-center(true);
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   .user-info {
     text-align: center;
 
     .profile-picture {
       width: 30%;
-      max-width: 120px;
-      border-radius: 100%;
+      border: 1px solid var(--dark);
+      border-radius: 10px;
+    }
+
+    .description {
+      margin: 0 auto;
     }
   }
 
   .home-links {
     width: 100%;
     @include flex-center();
+    justify-content: space-evenly;
+
     .home-link {
-      flex: 0 0 25%;
+      width: 40%;
+      // flex: 0 0 25%;
       margin: 0 15px;
-      padding: 50px 0;
+      padding: 10px 0;
       transition: .4s;
       border-radius: 50px;
       color: var(--white);
       @include flex-center(true);
+
       &:hover {
         transform: scale(1.1);
         text-decoration: none;
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
       }
+
       &:first-child { background-color: var(--blue) }
       &:nth-child(2) { background-color: var(--orange) }
       &:last-child { background-color: var(--red) }

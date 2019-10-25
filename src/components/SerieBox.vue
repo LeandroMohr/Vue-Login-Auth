@@ -32,19 +32,27 @@ export default {
 
 <style lang="scss" scoped>
   .serie-box {
-    margin: 30px;
-    cursor: pointer;
-    transition: .4s;
-    color: var(--dark);
-    &:hover {
-      text-decoration: none;
-      box-shadow: 1px 1px 20px rgba(0,0,0,0.5)
-    }
+    &.card {
+      margin: 30px;
+      cursor: pointer;
+      transition: .4s;
+      color: var(--dark);
 
-    .box-picture {
-      display: block;
-      min-width: 250px;
-      height: auto;
+      &:hover {
+        text-decoration: none;
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.5)
+      }
+
+      .card-body {
+        max-height: 350px;
+        overflow: auto;
+      }
+
+      .box-picture {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 </style>

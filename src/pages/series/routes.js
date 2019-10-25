@@ -7,7 +7,7 @@ export default [
       showNavbar: true,
       title: 'Séries',
       icon: 'dvr',
-      label: 'Todas as séries'
+      label: 'Tabela de filmes'
     }
   }
 ]

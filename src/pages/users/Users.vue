@@ -1,18 +1,20 @@
 <template>
-  <div class="container-fluid">
-    <h1 class="mt-3">Todos os usuários</h1>
-    <hr>
+  <section class="users">
+    <div class="container-fluid">
+      <h1 class="title mt-3">Todos os usuários</h1>
+      <hr>
 
-    <div class="row">
-      <div
-        class="col-sm-12 col-md-6 col-lg-4"
-        :key="item.id"
-        v-for="item in usersList"
-      >
-        <user-box :user="item" />
+      <div class="row">
+        <div
+          class="col-sm-12 col-md-6 col-lg-4"
+          :key="item.id"
+          v-for="item in usersList"
+        >
+          <user-box :user="item" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -35,3 +37,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.users{
+  .title {
+    color: var(--white);
+  }
+}
+</style>
